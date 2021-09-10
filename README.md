@@ -1,7 +1,7 @@
 # Installing Red Hat Advanced Cluster Management
 
 ## Assumptions: 
-* You have access to a AWS account are using IPI to install
+* You have access to a AWS account and are using IPI to install
 * You have a generated public ssh key
 * You have already downloaded the IPI installation program [here](https://console.redhat.com/openshift/install) needed for the OCP install
 * You have already created a pull secret [here](https://console.redhat.com/openshift/install/pull-secret)
