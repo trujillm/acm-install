@@ -14,10 +14,10 @@
     * We need to run the aws command to configure the aws account we want to use on the command line. If you are not familiar with this please see [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     * Once you have the profile configured for the correct account you want to deploy you can run the following command:
     
-        `export AWS_PROFILE=default`
+        `export AWS_PROFILE=YourProfileHere`
 2. Install the Hub and managed OCP clusters
 
-    * Modify the install.yaml files located int acm-test-cluster-hub and acm-test-cluster-managed with you pull secret and ssh public key
+    * Modify the install.yaml files located in acm-test-cluster-hub and acm-test-cluster-managed with you pull secret and ssh public key
     * Create the hub cluster by running the following command
     
       * `./openshift-install create cluster --dir=acm-test-cluster-hub --log-level=debug `
