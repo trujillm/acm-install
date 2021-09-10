@@ -1,0 +1,29 @@
+apiVersion: v1
+baseDomain: kni.syseng.devcluster.openshift.com
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      zones:
+      - us-east-2a
+      type: m5.2xlarge
+  replicas: 3
+compute:
+- hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      zones:
+      - us-east-2a
+      type: m5.2xlarge
+  replicas: 3
+metadata:
+  name: acm-test-cluster-hub
+platform:
+  aws:
+    region: us-east-2
+pullSecret: 'Add your pull secret here'
+## The default SSH key that will be programmed for `core` user.
+sshKey: |
+  Add you ssh key here
