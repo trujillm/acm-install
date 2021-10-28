@@ -1,7 +1,7 @@
 # Installing Red Hat Advanced Cluster Management
 
 ## Assumptions: 
-* You have access to a AWS account are using IPI to install
+* You have access to a AWS account and are using IPI to install
 * You have a generated public ssh key
 * You have already downloaded the IPI installation program [here](https://console.redhat.com/openshift/install) needed for the OCP install
 * You have already created a pull secret [here](https://console.redhat.com/openshift/install/pull-secret)
@@ -14,7 +14,7 @@
     * We need to run the aws command to configure the aws account we want to use on the command line. If you are not familiar with this please see [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     * Once you have the profile configured for the correct account you want to deploy you can run the following command:
     
-        `export AWS_PROFILE=default`
+        `export AWS_PROFILE=YourProfileHere`
 2. Install the Hub and managed OCP clusters
 
     * Modify the install.yaml files located int acm-test-cluster-hub, acm-test-cluster-managed, and acm-test-cluster-managed-2 with your pull secret and ssh public key
