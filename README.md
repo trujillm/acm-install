@@ -17,14 +17,15 @@
         `export AWS_PROFILE=default`
 2. Install the Hub and managed OCP clusters
 
-    * Modify the install.yaml files located int acm-test-cluster-hub and acm-test-cluster-managed with you pull secret and ssh public key
+    * Modify the install.yaml files located int acm-test-cluster-hub, acm-test-cluster-managed, and acm-test-cluster-managed-2 with your pull secret and ssh public key
     * Create the hub cluster by running the following command
     
       * `./openshift-install create cluster --dir=acm-test-cluster-hub --log-level=debug `
-    * Create the managed cluster by running the following command
+    * Create the managed clusters by running the following command
 
-        * `./openshift-install create cluster --dir=acm-test-cluster-hub --log-level=debug`
-        * Once the manage cluster is up add label cluster = marcus-test-cluster-managed
+        * `./openshift-install create cluster --dir=acm-test-managed --log-level=debug`
+        * `./openshift-install create cluster --dir=acm-test-managed-2 --log-level=debug`
+        * Once the manage cluster is up add label cluster = test-cluster-managed
 
 3. Create secret needed for for registry. You should have pulled the yaml file when you created the service registry account. See assumptions if this is unclear
       
@@ -32,7 +33,7 @@
 
     * Run the following command to create the secret from the yaml file
 
-      * `oc create -f acm-test01-secret.yaml --namespace=open-cluster-management`
+      * `oc create -f yourSecretHere.yaml --namespace=open-cluster-management`
 
 4. Apply ACM operator group via yaml file
 
@@ -64,6 +65,6 @@
      * Labels
        * Cloud: AWS
        * Environment: dev
-       * additional lables: cluster = marcus-test-cluster-managed
+       * additional lables: cluster = test-cluster-managed
 
 8. Confirm you see new cluster in Hub
